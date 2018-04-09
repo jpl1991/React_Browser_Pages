@@ -1,17 +1,30 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 import LoginForm from '../forms/LoginForm';
 
-const LoginPages = () => (
+class LoginPages extends React.Component {
+   
+	submit = data =>{
+		console.log(data);
+	}
 
-    <div>
+    constructor(props) {
+        super(props);
+    }
 
-    	<h1>Login page</h1>
+    render() {
+        return (
+        	<div>
 
-    	<LoginForm />
+    			<h1>Login page</h1>
 
-    </div>
-);
+    			<LoginForm submit={this.submit}/>
+
+    		</div>
+        );
+    }
+}
+
 
 export default LoginPages;
 
